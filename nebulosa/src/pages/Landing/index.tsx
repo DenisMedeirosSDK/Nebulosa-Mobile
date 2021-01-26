@@ -1,13 +1,24 @@
-import React from 'react'
-import { Image } from 'react-native'
+import React, { useState, useEffect } from 'react'
+import { Image, Text } from 'react-native'
 
 import { useNavigation } from '@react-navigation/native'
 
 import LandingImg from '../../assets/landing.png'
+import api from '../../services/api'
 import { Container, Title, TitleBold, ButtonClient, ButtonService, ButtonsContainer, ButtonText } from './styles'
 
 export default function Landing() {
   const { navigate } = useNavigation()
+
+  const [totalConnections, setTotalConnections] = useState(0)
+
+  useEffect(() => {
+    api.get('connections').then(response => {
+      const { total } = response.data
+
+      setTotalConnections(total)
+    })
+  }, [setTotalConnections])
 
   function handleNavigateToRegisterProvider() {
     navigate('ProviderRegister')
@@ -30,6 +41,7 @@ export default function Landing() {
           <ButtonText>Procure uma profissional</ButtonText>
         </ButtonService>
       </ButtonsContainer>
+      <Text style={{ color: '#FFF', marginTop: 20 }}>Total de conexões {totalConnections}</Text>
     </Container>
   )
 }
