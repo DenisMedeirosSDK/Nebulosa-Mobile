@@ -18,7 +18,7 @@ export const ProfileContainer = styled.View`
 export const ProfileAvatar = styled.Image`
   width: 64px;
   height: 64px;
-  border: 32px;
+  border-radius: 32px;
   background-color: #eee;
 `
 export const ProfileInfo = styled.View`
