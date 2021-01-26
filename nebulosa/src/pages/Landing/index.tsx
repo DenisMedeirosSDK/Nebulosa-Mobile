@@ -14,13 +14,13 @@ export default function Landing() {
   }
 
   function handleNavigateToListProviders() {
-    navigate('ProviderList')
+    navigate('ClientTabs')
   }
 
   return (
     <Container >
       <Image source={LandingImg} style={{ width: '100%', resizeMode: 'contain' }} />
-      <Title styled={{ fontFamily: 'Poppins_400Regular' }}>Seja bem-vindo, {'\n'} <TitleBold>O que deseja fazer?</TitleBold></Title>
+      <Title >Seja bem-vindo, {'\n'} <TitleBold>O que deseja fazer?</TitleBold></Title>
 
       <ButtonsContainer>
         <ButtonClient onPress={handleNavigateToRegisterProvider}>
