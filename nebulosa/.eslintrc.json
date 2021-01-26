@@ -21,6 +21,7 @@
   ],
   "rules": {
     "import/no-duplicates": "off",
+    "no-use-before-define": "off",
     "space-before-function-paren": "off",
     "camelcase": "off",
     "import-helpers/order-imports": [
@@ -28,8 +29,9 @@
       {
         "newlinesBetween": "always",
         "groups": [
+          "/^react/",
+          "/^expo/",
           "module",
-          "/@src/",
           [
             "parent",
             "sibling",
