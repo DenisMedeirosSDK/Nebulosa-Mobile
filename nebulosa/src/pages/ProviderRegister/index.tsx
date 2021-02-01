@@ -1,8 +1,19 @@
 import React from 'react'
-import { View } from 'react-native'
+
+import Header from '../../components/Header'
+import ProviderForm from '../../components/ProviderForm'
+import { Container, Content } from './styles'
 
 export default function ProviderRegister() {
   return (
-    <View></View>
+    <Container>
+      <Header title="Cadastrar perfil" />
+      <Content
+        contentContainerStyle={{ paddingHorizontal: 16, paddingBottom: 16 }}
+        showsVerticalScrollIndicator={false}
+      >
+        <ProviderForm />
+      </Content>
+    </Container>
   )
 }

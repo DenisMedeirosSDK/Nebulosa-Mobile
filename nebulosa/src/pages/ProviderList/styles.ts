@@ -29,7 +29,6 @@ export const TextInput = styled.TextInput`
 export const InputGroup = styled.View`
   flex-direction: row;
   justify-content: space-between;
-
 `
 export const InputBlock = styled.View`
   width: 48%;

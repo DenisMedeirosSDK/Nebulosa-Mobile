@@ -3,6 +3,7 @@ import { BorderlessButton } from 'react-native-gesture-handler'
 
 import { Feather as Icon } from '@expo/vector-icons'
 import AsyncStorage from '@react-native-async-storage/async-storage'
+import { Picker } from '@react-native-picker/picker'
 import { useFocusEffect } from '@react-navigation/native'
 
 import Header from '../../components/Header'
@@ -82,18 +83,28 @@ export default function ProviderList() {
           <InputGroup>
             <InputBlock>
               <Label>Dia da semana</Label>
-              <TextInput
-                placeholder="Data"
-                placeholderTextColor="#c1bccc"
-                value={week_day}
-                onChangeText={text => setWeek_day(text)}
-              />
+
+              <Picker
+                selectedValue={week_day}
+                onValueChange={(itemValue, itemIndex) => {
+                  if (itemValue !== 'default') { setWeek_day(String(itemValue)) }
+                }}
+              >
+                <Picker.Item label="Selecione um dia" value="default" color="#ccc" />
+                <Picker.Item label="Segunda-Feira" value="0" />
+                <Picker.Item label="Terça-Feira" value="1" />
+                <Picker.Item label="Quarta-Feira" value="2" />
+                <Picker.Item label="Quinta-Feira" value="3" />
+                <Picker.Item label="Sexta-Feira" value="4" />
+                <Picker.Item label="Sabado" value="5" />
+                <Picker.Item label="Domingo" value="6" />
+              </Picker>
             </InputBlock>
 
             <InputBlock>
               <Label>Horário</Label>
               <TextInput
-                placeholder="Horário"
+                placeholder="Horário 8:30"
                 placeholderTextColor="#c1bccc"
                 value={time}
                 onChangeText={text => setTime(text)}
