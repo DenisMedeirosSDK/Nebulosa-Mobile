@@ -1,0 +1,12 @@
+{
+  "name": "nebulosa",
+  "displayName": "nebulosa",
+  "expo": {
+    "name": "nebulosa",
+    "slug": "nebulosa",
+    "version": "1.0.0",
+    "assetBundlePatterns": [
+      "**/*"
+    ]
+  }
+}
