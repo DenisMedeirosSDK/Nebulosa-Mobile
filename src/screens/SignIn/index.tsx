@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 
+import { useNavigation } from '@react-navigation/native';
+
 import { Button } from '../../components/Button';
 import { Input } from '../../components/Input';
 import { LinearBackground } from '../../components/LinearBackground';
@@ -18,12 +20,13 @@ import {
 export function SignIn() {
   const primary = '#DD55DD';
   const secondary = '#EF946C';
-
+  const navigation = useNavigation();
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
 
   async function handleSignIn() {
     console.log(email, password);
+    navigation.navigate('MainRoutes');
   }
   async function handleToSignUp() {
     console.log('Go to signUp');
