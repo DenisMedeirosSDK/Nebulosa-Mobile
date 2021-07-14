@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import { FlatList, View } from 'react-native';
 
+import { useNavigation } from '@react-navigation/native';
+
 import { Category } from '../../components/Category';
 import { LinearBackground } from '../../components/LinearBackground';
 import { Container, Title, Wrapper } from './styles';
@@ -13,6 +15,7 @@ interface ICategoryProps {
 export function Search() {
   const primary = '#DD55DD';
   const secondary = '#EF946C';
+  const navigation = useNavigation();
 
   const [categories] = useState<ICategoryProps[]>([
     {
@@ -30,6 +33,7 @@ export function Search() {
   ]);
 
   function handleSearchByCategory(id: string) {
+    navigation.navigate('ListService');
     console.log('Search by', id);
   }
 
