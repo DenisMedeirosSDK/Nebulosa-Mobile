@@ -4,7 +4,6 @@ import styled from 'styled-components/native';
 
 export const Container = styled(RectButton)`
   flex: 1;
-  margin-top: 30px;
   background: #f9f5ff;
   border-radius: 6px;
   height: 120px;
