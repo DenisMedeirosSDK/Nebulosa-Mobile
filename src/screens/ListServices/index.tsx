@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import { FlatList, View } from 'react-native';
 
+import { useNavigation } from '@react-navigation/native';
+
 import { LinearBackground } from '../../components/LinearBackground';
 import { Services } from '../../components/Services';
 import { Container, Title, Wrapper } from './styles';
@@ -17,6 +19,7 @@ interface IServiceProps {
 export function ListServices() {
   const primary = '#DD55DD';
   const secondary = '#EF946C';
+  const navigation = useNavigation();
 
   const [services] = useState<IServiceProps[]>([
     {
@@ -68,6 +71,7 @@ export function ListServices() {
 
   function handleNewAppointment(id: string) {
     console.log('New appointment', id);
+    navigation.navigate('NewAppointment');
   }
 
   return (
