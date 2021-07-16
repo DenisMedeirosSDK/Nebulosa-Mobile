@@ -3,6 +3,7 @@ import React from 'react';
 import { createStackNavigator } from '@react-navigation/stack';
 
 import { ListServices } from '../screens/ListServices';
+import { NewAppointment } from '../screens/NewAppointment';
 import { SignIn } from '../screens/SignIn';
 import { MainRoutes } from './main.routes';
 
@@ -14,6 +15,7 @@ export function AppRoutes() {
       <Stack.Screen name="SignIn" component={SignIn} />
       <Stack.Screen name="MainRoutes" component={MainRoutes} />
       <Stack.Screen name="ListService" component={ListServices} />
+      <Stack.Screen name="NewAppointment" component={NewAppointment} />
     </Stack.Navigator>
   );
 }
