@@ -5,6 +5,7 @@ import { useNavigation } from '@react-navigation/native';
 import { Button } from '../../components/Button';
 import { Input } from '../../components/Input';
 import { LinearBackground } from '../../components/LinearBackground';
+import { useAuth } from '../../hooks/auth';
 import {
   Container,
   ContainerScroll,
@@ -24,7 +25,10 @@ export function SignIn() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
 
+  const { signIn } = useAuth();
+
   async function handleSignIn() {
+    await signIn({ email, password });
     console.log(email, password);
     navigation.navigate('MainRoutes');
   }
